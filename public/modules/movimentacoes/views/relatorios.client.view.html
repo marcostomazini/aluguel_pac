@@ -1,0 +1,282 @@
+<h3>Relatórios
+   <small>lista de todos os relatórios</small>
+</h3>
+
+<div ng-controller="RelatoriosController as ctrl" class="container-fluid">    	
+
+   <div class="row">
+      <div class="col-lg-12">
+         <div class="panel panel-default">
+            <div class="panel-heading">
+               Relatórios |
+               <small>lista de todos os relatórios!</small>
+            </div>
+            <div class="panel-body">
+
+            <accordion>
+               <accordion-group>
+                  <accordion-heading>Pesquisa</accordion-heading>
+
+                     <div class="panel-body">
+
+                        <div class="row">
+
+                           <div class="col-md-6">                           
+                             
+                              <fieldset>
+                                 <div class="form-group">
+                                    <label class="col-sm-2 control-label">
+                                        Mês:
+                                    </label>
+                                    
+                                    <div class="col-sm-5">
+                                       <p class="input-group">
+                                          <input type="text" name="dataMes" 
+                                             datepicker-popup="MM/yyyy" 
+                                             ng-model="pesquisa.mes" is-open="openedMes" 
+                                             datepicker-options="dateOptions" 
+                                             close-text="Fechar"
+                                          class="form-control ng-dirty ng-touched ng-invalid" />
+                                          <span class="input-group-btn">
+                                             <button type="button" ng-click="openMes($event)" class="btn btn-default">
+                                                <em class="fa fa-calendar"></em>
+                                             </button>
+                                          </span>
+                                       </p>
+                                    </div>
+                                                             
+                                 </div>
+                              </fieldset>                              
+
+                           </div>
+                        </div>
+
+                     </div>                 
+
+               </accordion-group>               
+            </accordion>
+
+            <!--<div ng-repeat="(id, val) in servicosRelatorios">
+               {{id}}
+               <div ng-repeat="(key, value) in val">
+                  {{key}}
+                  <div ng-repeat="servico in value">
+                     {{servico}}
+                  </div>   
+               </div>   
+            </div>-->
+
+             <div ng-if="relatorioAtivo == 'servico'">
+               <div class="panel">
+                  <div class="row" ng-repeat="(id, val) in servicosRelatorios">
+                     <div class="col-md-12">
+                        <p class="lead bb relatorio">{{id}}</p>
+                        
+                        <div class="col-md-12" ng-repeat="(key, value) in val">
+                           <p class="lead bb">{{key}}</p>
+
+                           <form class="form-horizontal p-20" ng-repeat="servico in value">
+                              <div class="col-sm-6">
+                                 {{servico.placa}}
+                              </div>
+                              <div class="col-sm-4">
+                                 {{servico.tipoServico}}
+                              </div>
+                              <div class="col-sm-2">
+                                 <strong>{{servico.valorRecebido | currency}}</strong>
+                              </div>                        
+                           </form>                     
+                           <strong></strong>
+
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            
+               <div class="col-md-3" ng-repeat="total in totalServicosRelatorios">
+                  Total em {{total.tipo}}: {{total.valorTotal | currency }}
+               </div>
+            </div>               
+
+            <div ng-if="relatorioAtivo == 'pagamento'">
+               <div class="panel">
+                  <div class="row" ng-repeat="(id, val) in pagamentosRelatorios">
+                     <div class="col-md-12">
+                        <p class="lead bb relatorio">{{id}}</p>
+                        
+                        <div class="col-md-12" ng-repeat="(key, value) in val">
+                           <p class="lead bb">{{key}}</p>
+
+                           <form class="form-horizontal p-20" ng-repeat="pagamento in value">
+                              <div class="col-sm-6">
+                                 {{pagamento.descricao}}
+                              </div>
+                              <div class="col-sm-2">
+                                 <strong>{{pagamento.valor | currency}}</strong>
+                              </div>                        
+                           </form>                     
+                           <strong></strong>
+
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            
+               <div class="col-md-3" ng-repeat="total in totalPagamentosRelatorios">
+                  Total em {{total.tipo}}: {{total.valorTotal | currency }}
+               </div>
+            </div>
+
+            <div ng-if="relatorioAtivo == 'lancamento'">
+               <div class="panel">
+                  <div class="row" ng-repeat="(id, val) in lancamentosRelatorios">
+                     <div class="col-md-12">
+                        <p class="lead bb relatorio">{{id}}</p>
+                        
+                        <div class="col-md-12" ng-repeat="(key, value) in val">
+                           <p class="lead bb">{{key}}</p>
+
+                           <form class="form-horizontal p-20" ng-repeat="lancamento in value">
+                              <div class="col-sm-6">
+                                 {{lancamento.descricao}}
+                              </div>
+                              <div class="col-sm-2">
+                                 <strong>{{lancamento.valor | currency}}</strong>
+                              </div>                        
+                           </form>                     
+                           <strong></strong>
+
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            
+               <div class="col-md-3" ng-repeat="total in totalLancamentosRelatorios">
+                  Total em {{total.tipo}}: {{total.valorTotal | currency }}
+               </div>
+            </div>
+
+            <div ng-if="relatorioAtivo == 'fechamento'">                                     
+
+               <div class="row">
+                  <div class="col-md-4">
+                  </div>
+                  <div class="col-md-3">
+                     <div class="panel b">
+                        <div class="panel-heading bb">
+                           <h4 class="panel-title">Fechamento</h4>
+                        </div>
+                        <div class="panel-body bt">
+                           <h4 class="b0">Fechamento {{resumoFechamento.periodo}}</h4>
+                        </div>
+                        <table class="table">
+                           <tbody>
+                              <tr>
+                                 <td>Serviços</td>
+                                 <td>
+                                    <div class="text-right text-bold">{{resumoFechamento.servico | currency }}</div>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td>Pagamentos</td>
+                                 <td>
+                                    <div class="text-right text-bold">{{resumoFechamento.pagamento | currency }}</div>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td>Lançamentos</td>
+                                 <td>
+                                    <div class="text-right text-bold">{{resumoFechamento.lancamento | currency }}</div>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                        <div class="panel-body">
+                           <div class="clearfix">
+                              <div class="pull-right text-right">
+                                 <div class="text-bold">{{resumoFechamento.lucro | currency }}</div>
+                                 <div class="text-sm">REAL</div>
+                              </div>
+                              <div class="pull-left text-bold text-dark">LUCRO</div>
+                           </div>
+                        </div>
+                        <div class="panel-body" ng-if="resumoFechamento.lucroBateu == false">
+                           <p>
+                              <button class="btn btn-danger btn-block" type="button">VALORES DIVERGENTES</button>
+                           </p>
+                           <small class="text-muted">* lucro não bateu com valores de serviços X pagamentos X lançamentos, favor revisar!! valor divergente: {{resumoFechamento.diferenca | currency }}</small>
+                        </div>                     
+                     </div>
+                  </div>
+                  <div class="col-md-4">
+                  </div>
+               </div>
+
+               <div class="row">
+               </div>
+
+               <div class="row">
+                  <div class="col-md-3" ng-repeat="total in totalServicosRelatorios">
+                     Serviços em {{total.tipo}}: {{total.valorTotal | currency }}
+                  </div>
+
+                  <div class="col-md-3" ng-repeat="total in totalPagamentosRelatorios">
+                     Pagamentos em {{total.tipo}}: {{total.valorTotal | currency }}
+                  </div>
+
+                  <div class="col-md-3" ng-repeat="total in totalLancamentosRelatorios">
+                     Lançamentos em {{total.tipo}}: {{total.valorTotal | currency }}
+                  </div>
+               </div>
+
+            </div>
+
+            <div ng-if="relatorioAtivo == 'contatos'">
+               <div class="panel">
+
+                  <div class="row" ng-repeat="contato in contatos.contatos">
+                     <div class="col-md-12">
+                        <form class="form-horizontal p-20">
+                              <div class="col-sm-6">
+                                 {{contato.cliente}}
+                              </div>
+                              <div class="col-sm-4">
+                                 {{contato.celular}}
+                              </div>
+                           </form>                     
+                           <strong></strong>
+                     </div>
+                  </div>
+
+                  <div class="row" ng-repeat="celular in contatos.contatosUnicos">
+                     <div class="col-md-12">
+                        <form class="form-horizontal p-20">
+                              <div class="col-sm-6">
+                                 {{celular}}
+                              </div>
+                           </form>                     
+                           <strong></strong>
+                     </div>
+                  </div>
+
+               </div>
+            
+               <div class="col-md-3">
+                  Total de contatos {{contatos.quantidade}}
+               </div>
+            </div>
+
+			</div>
+
+        <div class="modal-footer" style="text-align: center;">
+            <button ng-click="gerarRelatorioServico()" class="btn btn-primary">Serviços</button>
+            <button ng-click="gerarRelatorioPagamento()" class="btn btn-primary">Pagamentos</button>
+            <button ng-click="gerarRelatorioLancamento()" class="btn btn-primary">Lançamentos</button>
+            <button ng-click="gerarRelatorioContatos()" class="btn btn-primary">Contatos</button>
+            <button ng-click="gerarRelatorioFechamento()" class="btn btn-success">Fechamento</button>            
+         </div>
+
+         </div>
+      </div>
+   </div>
+</div>
