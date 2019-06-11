@@ -1,12 +1,67 @@
 <div class="content-heading">
     <div>Orçamento com PAC
-        <small>realiza os orçamento consultando pelo PAC</small>
+        <small>realiza os orçamento via pac</small>
     </div>
 </div>
 
 <!-- START card-->
 <div class="card card-default">
-    <div class="card-header">PAC</div>
+    <div class="card-header">Dados do Pretendente</div>
+    <div class="card-body">
+        <form class="form-horizontal" method="get" action="/">          
+            <fieldset>
+                <div class="form-group row">                    
+                    <div class="col-md-12">
+                        <form>
+                            <div class="form-row">
+                                <div class="col-lg-2 mb-3">
+                                    <label for="validationServer01">CPF</label>
+                                    <input class="form-control is-valid" id="validationServer01" type="text" placeholder="CPF" value="" required="" />
+                                    <div class="valid-feedback">Looks good!</div>
+                                </div>
+                                <div class="col-lg-6 mb-3">
+                                    <label for="validationServer02">Nome do Pretendente</label>
+                                    <input class="form-control is-valid" id="validationServer02" type="text" placeholder="Nome do Pretendente" value="" required="" />
+                                    <div class="valid-feedback">Looks good!</div>
+                                </div>
+                                <div class="col-lg-4 mb-3">
+                                    <label for="validationServer02">Pretendente Financeiro</label>
+                                    <input class="form-control is-valid" id="validationServer02" type="text" placeholder="Pretendente Financeiro" value="" required="" />
+                                    <div class="valid-feedback">Looks good!</div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-lg-4 mb-3">
+                                    <label for="validationServer03">Data de Nascimento</label>
+                                    <input class="form-control is-invalid" id="validationServer03" type="text" placeholder="Data de Nascimento" required="" />
+                                    <div class="invalid-feedback">Please provide a valid city.</div>
+                                </div>
+                                <div class="col-lg-4 mb-3">
+                                    <label for="validationServer03">Telefone Pretendente</label>
+                                    <input class="form-control is-invalid" id="validationServer03" type="text" placeholder="Telefone Pretendente" required="" />
+                                    <div class="invalid-feedback">Please provide a valid city.</div>
+                                </div>
+                                <div class="col-lg-4 mb-3">
+                                    <label for="validationServer04">Celular</label>
+                                    <input class="form-control is-invalid" id="validationServer04" type="text" placeholder="Celular" required="" />
+                                    <div class="invalid-feedback">Please provide a valid state.</div>
+                                </div>                                
+                            </div>
+                            <!--<div class="form-group mb-2">
+                                <div class="form-check">
+                                    <input class="form-check-input is-invalid" id="invalidCheck3" type="checkbox" value="" required="" />
+                                    <label class="form-check-label" for="invalidCheck3">Agree to terms and conditions</label>
+                                    <div class="invalid-feedback">You must agree before submitting.</div>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary" type="submit">Submit form</button>-->
+                        </form>
+                    </div>
+                </div>
+            </fieldset>            
+        </form>
+    </div>
+    <div class="card-header">Dados Complementares</div>
     <div class="card-body">
         <form class="form-horizontal" method="get" action="/">          
             <fieldset>
@@ -15,56 +70,167 @@
                         <form>
                             <div class="form-row">
                                 <div class="col-lg-4 mb-3">
-                                    <label for="validationServer01">First name</label>
-                                    <input class="form-control is-valid" id="validationServer01" type="text" placeholder="First name" value="Mark" required="" />
+                                    <label for="validationServer01">Estado Civil</label>
+                                    <input class="form-control is-valid" id="validationServer01" type="text" placeholder="Estado Civil" value="" required="" />
                                     <div class="valid-feedback">Looks good!</div>
                                 </div>
                                 <div class="col-lg-4 mb-3">
-                                    <label for="validationServer02">Last name</label>
-                                    <input class="form-control is-valid" id="validationServer02" type="text" placeholder="Last name" value="Otto" required="" />
+                                    <label for="validationServer02">CPF Cônjuge</label>
+                                    <input class="form-control is-valid" id="validationServer02" type="text" placeholder="CPF Cônjuge" value="" required="" />
                                     <div class="valid-feedback">Looks good!</div>
                                 </div>
                                 <div class="col-lg-4 mb-3">
-                                    <label for="validationServerUsername">Username</label>
+                                    <label for="validationServerUsername">Email</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="inputGroupPrepend3">@</span>
                                         </div>
-                                        <input class="form-control is-invalid" id="validationServerUsername" type="text" placeholder="Username" aria-describedby="inputGroupPrepend3" required="" />
+                                        <input class="form-control is-invalid" id="validationServerUsername" type="text" placeholder="Email" aria-describedby="inputGroupPrepend3" required="" />
                                         <div class="invalid-feedback">Please choose a username.</div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="col-lg-6 mb-3">
-                                    <label for="validationServer03">City</label>
-                                    <input class="form-control is-invalid" id="validationServer03" type="text" placeholder="City" required="" />
-                                    <div class="invalid-feedback">Please provide a valid city.</div>
-                                </div>
-                                <div class="col-lg-3 mb-3">
-                                    <label for="validationServer04">State</label>
-                                    <input class="form-control is-invalid" id="validationServer04" type="text" placeholder="State" required="" />
-                                    <div class="invalid-feedback">Please provide a valid state.</div>
-                                </div>
-                                <div class="col-lg-3 mb-3">
-                                    <label for="validationServer05">Zip</label>
-                                    <input class="form-control is-invalid" id="validationServer05" type="text" placeholder="Zip" required="" />
-                                    <div class="invalid-feedback">Please provide a valid zip.</div>
-                                </div>
-                            </div>
-                            <div class="form-group mb-2">
-                                <div class="form-check">
-                                    <input class="form-check-input is-invalid" id="invalidCheck3" type="checkbox" value="" required="" />
-                                    <label class="form-check-label" for="invalidCheck3">Agree to terms and conditions</label>
-                                    <div class="invalid-feedback">You must agree before submitting.</div>
-                                </div>
-                            </div>
-                            <button class="btn btn-primary" type="submit">Submit form</button>
+                            </div>                            
                         </form>
                     </div>
                 </div>
             </fieldset>            
         </form>
     </div>
+    <div class="card-header">Dados Profissionais</div>
+    <div class="card-body">
+        <form class="form-horizontal" method="get" action="/">          
+            <fieldset>
+                <div class="form-group row">                    
+                    <div class="col-md-12">
+                        <form>
+                            <div class="form-row">
+                                <div class="col-lg-4 mb-3">
+                                    <label for="validationServer01">Vínculo Empregatício</label>
+                                    <input class="form-control is-valid" id="validationServer01" type="text" placeholder="Vínculo Empregatício" value="" required="" />
+                                    <div class="valid-feedback">Looks good!</div>
+                                </div>
+                                <div class="col-lg-8 mb-3">
+                                    <label for="validationServer02">Empresa</label>
+                                    <input class="form-control is-valid" id="validationServer02" type="text" placeholder="Empresa" value="" required="" />
+                                    <div class="valid-feedback">Looks good!</div>
+                                </div>                                
+                            </div>          
+                            <div class="form-row">
+                                <div class="col-lg-3 mb-3">
+                                    <label for="validationServer01">Telefone Local de Trabalho</label>
+                                    <input class="form-control is-valid" id="validationServer01" type="text" placeholder="Telefone Local de Trabalho" value="" required="" />
+                                    <div class="valid-feedback">Looks good!</div>
+                                </div>
+                                <div class="col-lg-3 mb-3">
+                                    <label for="validationServer02">Ramal</label>
+                                    <input class="form-control is-valid" id="validationServer02" type="text" placeholder="Ramal" value="" required="" />
+                                    <div class="valid-feedback">Looks good!</div>
+                                </div>
+                                <div class="col-lg-3 mb-3">
+                                    <label for="validationServer02">Salário/Rendimento Principal</label>
+                                    <input class="form-control is-valid" id="validationServer02" type="text" placeholder="Salário/Rendimento Principal" value="" required="" />
+                                    <div class="valid-feedback">Looks good!</div>
+                                </div>
+                                <div class="col-lg-3 mb-3">
+                                    <label for="validationServer02">Outros Rendimentos</label>
+                                    <input class="form-control is-valid" id="validationServer02" type="text" placeholder="Outros Rendimentos" value="" required="" />
+                                    <div class="valid-feedback">Looks good!</div>
+                                </div>
+                            </div>                  
+                        </form>
+                    </div>
+                </div>
+            </fieldset>            
+        </form>
+    </div>
+    <div class="card-header">Dados da atual residência do Pretendente</div>
+    <div class="card-body">
+        <form class="form-horizontal" method="get" action="/">          
+            <fieldset>
+                <div class="form-group row">                    
+                    <div class="col-md-12">
+                        <form>
+                            <div class="form-row">
+                                <div class="col-lg-4 mb-3">
+                                    <label for="validationServer01">CEP Atual</label>
+                                    <input class="form-control is-valid" id="validationServer01" type="text" placeholder="CEP Atual" value="" required="" />
+                                    <div class="valid-feedback">Looks good!</div>
+                                </div>                                                          
+                            </div>                                                  
+                        </form>
+                    </div>
+                </div>
+            </fieldset>            
+        </form>
+    </div>
+    <div class="card-header">Dados do Imóvel Pretendido</div>
+    <div class="card-body">
+        <form class="form-horizontal" method="get" action="/">          
+            <fieldset>
+                <div class="form-group row">                    
+                    <div class="col-md-12">
+                        <form>
+                            <div class="form-row">
+                                <div class="col-lg-4 mb-3">
+                                    <label for="validationServer01">CEP</label>
+                                    <input class="form-control is-valid" id="validationServer01" type="text" placeholder="CEP" value="" required="" />
+                                    <div class="valid-feedback">Looks good!</div>
+                                </div>
+                                <div class="col-lg-4 mb-3">
+                                    <label for="validationServer01">Tipo Imóvel</label>
+                                    <input class="form-control is-valid" id="validationServer01" type="text" placeholder="Tipo Imóvel" value="" required="" />
+                                    <div class="valid-feedback">Looks good!</div>
+                                </div>
+                                <div class="col-lg-4 mb-3">
+                                    <label for="validationServer01">Motivo de Locação</label>
+                                    <input class="form-control is-valid" id="validationServer01" type="text" placeholder="Motivo de Locação" value="" required="" />
+                                    <div class="valid-feedback">Looks good!</div>
+                                </div>                                
+                            </div>                                
+                            <div class="form-row">
+                                <div class="col-lg-3 mb-3">
+                                    <label for="validationServer01">Aluguel</label>
+                                    <input class="form-control is-valid" id="validationServer01" type="text" placeholder="Aluguel" value="Mark" required="" />
+                                    <div class="valid-feedback">Looks good!</div>
+                                </div>
+                                <div class="col-lg-3 mb-3">
+                                    <label for="validationServer01">Condomínio</label>
+                                    <input class="form-control is-valid" id="validationServer01" type="text" placeholder="Condomínio" value="" required="" />
+                                    <div class="valid-feedback">Looks good!</div>
+                                </div>
+                                <div class="col-lg-3 mb-3">
+                                    <label for="validationServer01">Luz</label>
+                                    <input class="form-control is-valid" id="validationServer01" type="text" placeholder="Luz" value="" required="" />
+                                    <div class="valid-feedback">Looks good!</div>
+                                </div>
+                                <div class="col-lg-3 mb-3">
+                                    <label for="validationServer01">Total de Valores</label>
+                                    <input class="form-control is-valid" id="validationServer01" type="text" placeholder="Total de Valores" value="" required="" />
+                                    <div class="valid-feedback">Looks good!</div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-lg-3 mb-3">
+                                    <label for="validationServer01">IPTU</label>
+                                    <input class="form-control is-valid" id="validationServer01" type="text" placeholder="IPTU" value="" required="" />
+                                    <div class="valid-feedback">Looks good!</div>
+                                </div>
+                                <div class="col-lg-3 mb-3">
+                                    <label for="validationServer01">Água</label>
+                                    <input class="form-control is-valid" id="validationServer01" type="text" placeholder="Água" value="" required="" />
+                                    <div class="valid-feedback">Looks good!</div>
+                                </div>
+                                <div class="col-lg-3 mb-3">
+                                    <label for="validationServer01">Gás Canalizado</label>
+                                    <input class="form-control is-valid" id="validationServer01" type="text" placeholder="Gás Canalizado" value="" required="" />
+                                    <div class="valid-feedback">Looks good!</div>
+                                </div>                                
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </fieldset>            
+        </form>
+    </div>    
 </div>
 <!-- END card-->
