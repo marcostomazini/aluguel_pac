@@ -20,8 +20,8 @@ export class SettingsService {
         // App Settings
         // -----------------------------------
         this.app = {
-            name: 'Angle',
-            description: 'Angular Bootstrap Admin Template',
+            name: 'ArquitetaWeb',
+            description: 'Api Core ArquitetaWeb',
             year: ((new Date()).getFullYear())
         };
 

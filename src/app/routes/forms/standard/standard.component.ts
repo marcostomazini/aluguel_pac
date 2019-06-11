@@ -6,8 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./standard.component.scss']
 })
 export class StandardComponent implements OnInit {
+  modeloPac: any;
 
-  constructor() { }
+  constructor() { 
+  		this.modeloPac = {
+            CPF: "052"
+        };
+    }
 
   ngOnInit() {
   }
