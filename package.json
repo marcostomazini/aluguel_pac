@@ -16,7 +16,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "modernizr": "modernizr -c modernizr-config.json -d src/modernizr.js",
-    "postinstall": "ng build --aot -prod",
+    "postinstall": "ng build --aot --prod",
     "e2e": "ng e2e"
   },
   "dependencies": {
