@@ -10,9 +10,11 @@ import { ImageCropperModule } from 'ng2-img-cropper';
 
 import { SharedModule } from '../../shared/shared.module';
 import { StandardComponent } from './standard/standard.component';
+import { PacViewComponent } from './pacstep/productview.component';
 
 const routes: Routes = [
-    { path: 'pac', component: StandardComponent }
+    { path: 'pac', component: StandardComponent },
+    { path: 'pac2', component: PacViewComponent },
 ];
 
 @NgModule({
@@ -29,7 +31,8 @@ const routes: Routes = [
     ],
     providers: [ColorPickerService],
     declarations: [
-        StandardComponent
+        StandardComponent,
+        PacViewComponent
     ],
     exports: [
         RouterModule

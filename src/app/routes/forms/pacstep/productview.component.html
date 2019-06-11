@@ -1,0 +1,187 @@
+<div class="content-heading">
+    <div>Orçamento com PAC
+        <small>realiza os orçamento via pac</small>
+    </div>
+</div>
+
+<form class="card">
+    <tabset [justified]="true" class="ie-fix-flex">
+        <tab>
+            <ng-template tabHeading>Dados do Pretendente</ng-template >
+            <div>
+                <fieldset>
+                    <div class="form-group row">
+                        <div class="col-lg-2 mb-3">
+                            <label for="validationServer01">CPF</label>
+                            <input class="form-control is-valid" name="cpf" type="text" [(ngModel)]="modeloPac.CPF" placeholder="CPF" value="" required="" />
+                            <div class="valid-feedback">{{ modeloPac.CPF }}</div>
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                            <label for="validationServer02">Nome do Pretendente</label>
+                            <input class="form-control is-valid" id="validationServer02" type="text" placeholder="Nome do Pretendente" value="" required="" />
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <label for="validationServer02">Pretendente Financeiro</label>
+                            <input class="form-control is-valid" id="validationServer02" type="text" placeholder="Pretendente Financeiro" value="" required="" />
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-lg-4 mb-3">
+                            <label for="validationServer03">Data de Nascimento</label>
+                            <input class="form-control is-invalid" id="validationServer03" type="text" placeholder="Data de Nascimento" required="" />
+                            <div class="invalid-feedback">Please provide a valid city.</div>
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <label for="validationServer03">Telefone Pretendente</label>
+                            <input class="form-control is-invalid" id="validationServer03" type="text" placeholder="Telefone Pretendente" required="" />
+                            <div class="invalid-feedback">Please provide a valid city.</div>
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <label for="validationServer04">Celular</label>
+                            <input class="form-control is-invalid" id="validationServer04" type="text" placeholder="Celular" required="" />
+                            <div class="invalid-feedback">Please provide a valid state.</div>
+                        </div>                                
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-lg-3 mb-3">
+                            <label for="validationServer01">Estado Civil</label>
+                            <input class="form-control is-valid" id="validationServer01" type="text" placeholder="Estado Civil" value="" required="" />
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="col-lg-3 mb-3">
+                            <label for="validationServer02">CPF Cônjuge</label>
+                            <input class="form-control is-valid" id="validationServer02" type="text" placeholder="CPF Cônjuge" value="" required="" />
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="col-lg-3 mb-3">
+                            <label for="validationServerUsername">Email</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroupPrepend3">@</span>
+                                </div>
+                                <input class="form-control is-invalid" id="validationServerUsername" type="text" placeholder="Email" aria-describedby="inputGroupPrepend3" required="" />
+                                <div class="invalid-feedback">Please choose a username.</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 mb-3">
+                            <label for="validationServer01">CEP Atual</label>
+                            <input class="form-control is-valid" id="validationServer01" type="text" placeholder="CEP Atual" value="" required="" />
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>                                                                              
+                    </div>
+                </fieldset>                
+            </div>
+        </tab>
+        <tab>
+            <ng-template tabHeading>Dados Profissionais</ng-template >
+            <div>
+                <fieldset>             
+                    <div class="form-group row">
+                        <div class="col-lg-4 mb-3">
+                            <label for="validationServer01">Vínculo Empregatício</label>
+                            <input class="form-control is-valid" id="validationServer01" type="text" placeholder="Vínculo Empregatício" value="" required="" />
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="col-lg-8 mb-3">
+                            <label for="validationServer02">Empresa</label>
+                            <input class="form-control is-valid" id="validationServer02" type="text" placeholder="Empresa" value="" required="" />
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>                                
+                    </div>          
+                    <div class="form-group row">
+                        <div class="col-lg-3 mb-3">
+                            <label for="validationServer01">Telefone Local de Trabalho</label>
+                            <input class="form-control is-valid" id="validationServer01" type="text" placeholder="Telefone Local de Trabalho" value="" required="" />
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="col-lg-3 mb-3">
+                            <label for="validationServer02">Ramal</label>
+                            <input class="form-control is-valid" id="validationServer02" type="text" placeholder="Ramal" value="" required="" />
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="col-lg-3 mb-3">
+                            <label for="validationServer02">Salário/Rendimento Principal</label>
+                            <input class="form-control is-valid" id="validationServer02" type="text" placeholder="Salário/Rendimento Principal" value="" required="" />
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="col-lg-3 mb-3">
+                            <label for="validationServer02">Outros Rendimentos</label>
+                            <input class="form-control is-valid" id="validationServer02" type="text" placeholder="Outros Rendimentos" value="" required="" />
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                    </div>                  
+                </fieldset>
+            </div>
+        </tab>
+        <tab>
+            <ng-template tabHeading>Dados do Imóvel Pretendido</ng-template >
+            <div>
+                <fieldset>
+                    <div class="form-group row">
+                        <div class="col-lg-4 mb-3">
+                            <label for="validationServer01">CEP</label>
+                            <input class="form-control is-valid" id="validationServer01" type="text" placeholder="CEP" value="" required="" />
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <label for="validationServer01">Tipo Imóvel</label>
+                            <input class="form-control is-valid" id="validationServer01" type="text" placeholder="Tipo Imóvel" value="" required="" />
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <label for="validationServer01">Motivo de Locação</label>
+                            <input class="form-control is-valid" id="validationServer01" type="text" placeholder="Motivo de Locação" value="" required="" />
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>                                
+                    </div>                                
+                    <div class="form-group row">
+                        <div class="col-lg-3 mb-3">
+                            <label for="validationServer01">Aluguel</label>
+                            <input class="form-control is-valid" id="validationServer01" type="text" placeholder="Aluguel" value="Mark" required="" />
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="col-lg-3 mb-3">
+                            <label for="validationServer01">Condomínio</label>
+                            <input class="form-control is-valid" id="validationServer01" type="text" placeholder="Condomínio" value="" required="" />
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="col-lg-3 mb-3">
+                            <label for="validationServer01">Luz</label>
+                            <input class="form-control is-valid" id="validationServer01" type="text" placeholder="Luz" value="" required="" />
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="col-lg-3 mb-3">
+                            <label for="validationServer01">Total de Valores</label>
+                            <input class="form-control is-valid" id="validationServer01" type="text" placeholder="Total de Valores" value="" required="" />
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-lg-3 mb-3">
+                            <label for="validationServer01">IPTU</label>
+                            <input class="form-control is-valid" id="validationServer01" type="text" placeholder="IPTU" value="" required="" />
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="col-lg-3 mb-3">
+                            <label for="validationServer01">Água</label>
+                            <input class="form-control is-valid" id="validationServer01" type="text" placeholder="Água" value="" required="" />
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="col-lg-3 mb-3">
+                            <label for="validationServer01">Gás Canalizado</label>
+                            <input class="form-control is-valid" id="validationServer01" type="text" placeholder="Gás Canalizado" value="" required="" />
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>                                
+                    </div>
+                </fieldset>
+            </div>
+        </tab>
+    </tabset>
+</form>
+
+<div class="text-right mt-lg">
+    <button class="btn btn-warning" type="button">Discard</button>
+    <button class="btn btn-success" type="button">Save</button>
+</div>
