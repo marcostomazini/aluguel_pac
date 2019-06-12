@@ -41,7 +41,9 @@
     "angular-tree-component": "8.0.0",
     "angular2-text-mask": "9.0.0",
     "angular2-toaster": "7.0.0",
+    "axios": "^0.19.0",
     "bootstrap": "4.3.1",
+    "chalk": "^2.4.2",
     "chart.js": "2.7.3",
     "classlist.js": "1.1.20150312",
     "codemirror": "5.42.0",
@@ -52,6 +54,7 @@
     "flot": "themicon/flot",
     "forever": "^1.0.0",
     "fullcalendar": "3.9.0",
+    "glob": "^7.1.4",
     "ika.jvectormap": "themicon/ika.jvectormap",
     "intl": "1.2.5",
     "jqcloud2": "2.0.3",
@@ -91,6 +94,7 @@
     "typescript": "3.1.1",
     "weather-icons": "github:erikflowers/weather-icons",
     "web-animations-js": "2.2.1",
+    "xml-js": "^1.6.11",
     "zone.js": "0.8.26"
   },
   "devDependencies": {
