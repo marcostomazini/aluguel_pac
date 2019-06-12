@@ -4,6 +4,9 @@
     </div>
 </div>
 
+<pre>{{menuItems|json}}</pre>
+<pre>{{vinculos|json}}</pre>
+
 <!-- START card-->
 <div class="card card-default">
     <div class="card-header">Dados do Pretendente</div>
@@ -104,10 +107,13 @@
                     <div class="col-md-12">
                         <form>
                             <div class="form-row">
+                                
                                 <div class="col-lg-4 mb-3">
-                                    <label for="validationServer01">Vínculo Empregatício</label>
-                                    <input class="form-control is-valid" id="validationServer01" type="text" placeholder="Vínculo Empregatício" value="" required="" />
-                                    <div class="valid-feedback">Looks good!</div>
+                                    <label for="validationServer01">Vínculo Empregatício</label>                                    
+                                    <select class="custom-select custom-select-sm">
+                                        <option selected=""></option>                                           
+                                        <option [value]="vinculo.id" *ngFor="let vinculo of vinculos">{{vinculo.value}}</option>
+                                    </select>            
                                 </div>
                                 <div class="col-lg-8 mb-3">
                                     <label for="validationServer02">Empresa</label>

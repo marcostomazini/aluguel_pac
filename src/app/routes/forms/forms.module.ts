@@ -8,6 +8,8 @@ import { CustomFormsModule } from 'ng2-validation';
 import { FileUploadModule } from 'ng2-file-upload';
 import { ImageCropperModule } from 'ng2-img-cropper';
 
+import { ApiService } from './standard/standard.service';
+
 import { SharedModule } from '../../shared/shared.module';
 import { StandardComponent } from './standard/standard.component';
 import { PacViewComponent } from './pacstep/productview.component';
@@ -29,7 +31,7 @@ const routes: Routes = [
         FileUploadModule,
         ImageCropperModule
     ],
-    providers: [ColorPickerService],
+    providers: [ColorPickerService, ApiService],
     declarations: [
         StandardComponent,
         PacViewComponent
