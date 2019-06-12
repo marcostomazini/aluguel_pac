@@ -2,12 +2,18 @@ const axios = require('axios');
 const convert = require('xml-js');
 const { envelopeDefault } = require('./envelopes');
 
+const init = require('../config/init')(),
+    config = require('../config/config');
+
 async function executar(operacao){
+    let chaveBasic = config.porto.authorization;
+    console.log(chaveBasic);
+
     const requestSoap = await axios({
         method: 'POST',
         url: 'https://hml.portoseguro.com.br/AluguelDominiosIntegrationService/AluguelDominiosIntegrationServiceV1_0/AluguelDominiosIntegrationService/AluguelDominiosIntegrationServiceV1_0',
         headers:{
-            Authorization:'Basic c2xodGRjZXg6emNidmZqNTY=',
+            Authorization:'Basic ' + chaveBasic,
             soapAction: 'http://www.portoseguro.com.br/fiancalocaticia/dominios/v1/pesquisarMotivosLocacao',
             'Content-Type':'text/xml; charset=UTF-8'
         },
