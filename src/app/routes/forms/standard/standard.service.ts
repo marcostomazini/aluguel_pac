@@ -29,6 +29,10 @@ export class ApiService {
         return this.menuItems;
     }
 
+    getMotivos() {
+      return this.http.get("/api/pac/motivos-locacao");
+    }
+
     getVinculos() {
       return this.http.get("/api/pac/vinculos-empregaticios");
     }

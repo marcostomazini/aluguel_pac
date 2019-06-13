@@ -4,6 +4,8 @@
     </div>
 </div>
 
+<pre>{{ modeloPac | json }}</pre>
+
 <!-- START card-->
 <div class="card card-default">
     <div class="card-header">Dados do Pretendente</div>
@@ -16,8 +18,13 @@
                             <div class="form-row">
                                 <div class="col-lg-2 mb-3">
                                     <label for="validationServer01">CPF</label>
-                                    <input class="form-control is-valid" name="cpf" type="text" [(ngModel)]="modeloPac.CPF" placeholder="CPF" value="" required="" />
+                                    <input class="form-control" 
+                                    [ngClass]="{ 'is-invalid': modeloPac.CPF.required || modeloPac.CPF.invalid && (modeloPac.CPF.dirty || modeloPac.CPF.touched) }"
+                                    name="cpf" type="text" [(ngModel)]="modeloPac.CPF" placeholder="CPF" value="" required="true" />
+
+                                    <div class="invalid-feedback">Please provide a valid city.</div>
                                     <div class="valid-feedback">{{ modeloPac.CPF }}</div>
+
                                 </div>
                                 <div class="col-lg-6 mb-3">
                                     <label for="validationServer02">Nome do Pretendente</label>
@@ -107,10 +114,10 @@
                                 
                                 <div class="col-lg-4 mb-3">
                                     <label for="validationServer01">Vínculo Empregatício</label>                                    
-                                    <select class="custom-select custom-select-sm">
+                                    <select class="custom-select custom-select-sm" name="vinculo" [(ngModel)]="modeloPac.vinculo">
                                         <option selected=""></option>                                           
-                                        <option [value]="vinculo.id" *ngFor="let vinculo of vinculos">{{vinculo.value}}</option>
-                                    </select>            
+                                        <option [ngValue]="vinculo.id" *ngFor="let vinculo of vinculos">{{vinculo.value}}</option>
+                                    </select>
                                 </div>
                                 <div class="col-lg-8 mb-3">
                                     <label for="validationServer02">Empresa</label>
@@ -184,10 +191,12 @@
                                     <input class="form-control is-valid" id="validationServer01" type="text" placeholder="Tipo Imóvel" value="" required="" />
                                     <div class="valid-feedback">Looks good!</div>
                                 </div>
-                                <div class="col-lg-4 mb-3">
-                                    <label for="validationServer01">Motivo de Locação</label>
-                                    <input class="form-control is-valid" id="validationServer01" type="text" placeholder="Motivo de Locação" value="" required="" />
-                                    <div class="valid-feedback">Looks good!</div>
+                                <div class="col-lg-4 mb-3">                                    
+                                    <label for="validationServer01">Motivo de Locação</label>                                    
+                                    <select class="custom-select custom-select-sm" name="motivoLocacao" [(ngModel)]="modeloPac.motivoLocacao">
+                                        <option selected=""></option>                                           
+                                        <option [ngValue]="motivo.id" *ngFor="let motivo of motivosLocacao">{{motivo.value}}</option>
+                                    </select>
                                 </div>                                
                             </div>                                
                             <div class="form-row">
